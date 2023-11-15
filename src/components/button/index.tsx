@@ -7,6 +7,7 @@ interface IButton {
   readonly type: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
   readonly onClick: () => void;
   readonly className?: string;
+  readonly color?: 'blue' | 'white';
 }
 
 const Button: FC<IButton> = ({
@@ -14,10 +15,13 @@ const Button: FC<IButton> = ({
   type,
   onClick,
   className,
+  color,
 }): ReactElement => {
+  const typeColor = color === 'white' ? styles.button_white : '';
+
   return (
     <button
-      className={`${styles.button} ${className || ''}`}
+      className={`${styles.button} ${typeColor} ${className || ''}`}
       type={type || 'button'}
       onClick={onClick}
     >
