@@ -15,6 +15,7 @@
   color: #4f4f55;
   border-radius: 16px;
   border: 1px solid #dee4f0;
+  cursor: pointer;
   transition: box-shadow $animation-duration ease-in-out,
     border-color $animation-duration ease-in-out;
 
@@ -33,6 +34,7 @@
     color: #787978;
     border: 0;
     outline: 0;
+    cursor: pointer;
 
     &::placeholder {
       color: #787978;

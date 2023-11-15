@@ -9,6 +9,7 @@ interface IField {
   readonly value: string;
   readonly onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   readonly placeholder?: string;
+  readonly className?: string;
 }
 
 const Field: FC<IField> = ({
@@ -18,9 +19,10 @@ const Field: FC<IField> = ({
   value,
   onChange,
   placeholder,
+  className,
 }): ReactElement => {
   return (
-    <label className={styles.label}>
+    <label className={`${styles.label} ${className || ''}`}>
       {title}
       <input
         className={styles.label__input}
