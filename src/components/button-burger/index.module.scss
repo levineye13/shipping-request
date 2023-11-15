@@ -1,0 +1,50 @@
+@import '../../styles/index.scss';
+
+.button {
+  display: none;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  width: 45px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    animation: button-scale 0.7s linear 0s 1;
+  }
+
+  @media screen and (max-width: 719px) {
+    display: flex;
+  }
+
+  &__element {
+    position: relative;
+
+    &,
+    &::before,
+    &::after {
+      display: block;
+      width: 40px;
+      height: 4px;
+      background-color: $white;
+      border-radius: 3px;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+    }
+
+    &::before {
+      top: -10px;
+    }
+
+    &::after {
+      top: 10px;
+    }
+  }
+}
