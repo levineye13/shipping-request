@@ -1,0 +1,99 @@
+@import '../../styles/index.scss';
+
+.sidebar {
+  box-sizing: border-box;
+  max-width: 300px;
+  font-family: $font-opensans;
+  background-color: $blue;
+  height: 100vh;
+  width: 0;
+  padding: 30px 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  transition: width $animation-duration ease-in-out;
+  overflow: hidden;
+
+  &_opened {
+    width: 100%;
+  }
+
+  &__close {
+    border: 0;
+    outline: 0;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    display: block;
+    align-self: flex-end;
+    margin-right: 20px;
+    cursor: pointer;
+
+    &:hover {
+      animation: button-scale 0.7s linear 0s 1;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 4px;
+      background-color: $white;
+      border-radius: 3px;
+      margin-left: 5px;
+    }
+
+    &::before {
+      transform: translateY(2px) rotate(45deg);
+    }
+
+    &::after {
+      transform: translateY(-2px) rotate(-45deg);
+    }
+  }
+
+  &__list {
+    @extend %list;
+    margin-top: 30px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item:not(:first-of-type) {
+    margin-top: 20px;
+  }
+
+  &__link {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &__text {
+    @include font(20px, 400, normal);
+    color: $white;
+    display: block;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      height: 6px;
+      width: 100%;
+      position: absolute;
+      top: 100%;
+      margin-top: 1px;
+      background-color: transparent;
+      transition: background-color $animation-duration ease-in-out;
+    }
+  }
+
+  &__link:hover &__text::before {
+    background-color: $yellow;
+  }
+}
