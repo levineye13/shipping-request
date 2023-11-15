@@ -9,6 +9,7 @@
   top: 0;
   visibility: hidden;
   opacity: 0;
+  cursor: pointer;
   transition: visibility $animation-duration ease-in-out,
     opacity $animation-duration ease-in-out;
 
