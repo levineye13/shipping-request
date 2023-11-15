@@ -1,0 +1,24 @@
+@import '../../styles/index.scss';
+
+.fieldset {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 20px;
+  width: 100%;
+  border: 1px solid $blue;
+  border-radius: 21px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 16px;
+
+  &__title {
+    @include font(24px, 800, normal);
+    font-family: $font-opensans;
+    flex-basis: 100%;
+    margin: 0;
+    display: block;
+    color: #262d38;
+  }
+}
