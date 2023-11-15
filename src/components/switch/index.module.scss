@@ -1,0 +1,47 @@
+@import '../../styles/index.scss';
+
+.switch {
+  @include font(16px, 300, normal);
+  font-family: $font-opensans;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  user-select: none;
+  color: $grey;
+  cursor: pointer;
+
+  &__custom {
+    width: 53px;
+    height: 33px;
+    margin-left: 20px;
+    border-radius: 47px;
+    background-color: #dee4f0;
+    position: relative;
+    transition: background-color $animation-duration linear;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 22px;
+      height: 22px;
+      position: absolute;
+      top: calc(50% - 11px);
+      left: 5px;
+      background-color: $white;
+      border-radius: 50%;
+      transition: left $animation-duration linear;
+    }
+
+    &_checked {
+      background-color: $blue;
+
+      &::before {
+        left: calc(100% - 22px - 5px);
+      }
+    }
+  }
+
+  &__checkbox {
+    display: none;
+  }
+}
