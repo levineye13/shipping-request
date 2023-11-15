@@ -1,0 +1,8 @@
+@import '../../styles/index.scss';
+
+.title {
+  @include font(35px, 800, normal);
+  font-family: $font-opensans;
+  margin: 0;
+  color: $blue;
+}
