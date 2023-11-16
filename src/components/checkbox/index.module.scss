@@ -1,0 +1,65 @@
+@import '../../styles/index.scss';
+
+.label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+
+  &__custom {
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    border: 1px solid $blue;
+    border-radius: 5px;
+    position: relative;
+    transition: box-shadow $animation-duration ease-in-out;
+
+    &:hover {
+      box-shadow: 0px 0px 3px 1px rgba(53, 165, 0, 0.7);
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      display: none;
+      position: absolute;
+      left: 7px;
+      bottom: 3px;
+      width: 2px;
+      background-color: $white;
+      border-radius: 2px;
+      transform-origin: center bottom;
+    }
+
+    &::before {
+      height: 7px;
+      transform: rotate(-40deg);
+    }
+
+    &::after {
+      height: 13px;
+      transform: rotate(30deg);
+    }
+
+    &_checked {
+      background-color: $blue;
+
+      &::before,
+      &::after {
+        display: block;
+      }
+    }
+  }
+
+  &__signature {
+    @include font(10px, 300, normal);
+    font-family: $font-inter;
+    color: #4f4f55;
+    margin: 0 0 0 10px;
+  }
+
+  &__checkbox {
+    display: none;
+  }
+}

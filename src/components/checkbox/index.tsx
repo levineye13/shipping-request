@@ -2,33 +2,30 @@ import React, { FC, ReactElement } from 'react';
 
 import styles from './index.module.scss';
 
-interface ISwitch {
-  readonly title: string;
-  readonly name: string;
+interface ICheckbox {
   readonly checked: boolean;
   readonly onChange: () => void;
+  readonly signature?: string;
   readonly className?: string;
 }
 
-const Switch: FC<ISwitch> = ({
-  title,
-  name,
+const Checkbox: FC<ICheckbox> = ({
   checked,
   onChange,
+  signature,
   className,
 }): ReactElement => {
   return (
-    <label className={`${styles.switch} ${className || ''}`}>
-      {title}
+    <label className={`${styles.label} ${className || ''}`}>
       <span
-        className={`${styles.switch__custom} ${
-          checked ? styles.switch__custom_checked : ''
+        className={`${styles.label__custom} ${
+          checked ? styles.label__custom_checked : ''
         }`}
       />
+      {signature && <p className={styles.label__signature}>{signature}</p>}
       <input
-        className={styles.switch__checkbox}
+        className={styles.label__checkbox}
         type='checkbox'
-        name={name}
         checked={checked}
         onChange={onChange}
       />
@@ -36,4 +33,4 @@ const Switch: FC<ISwitch> = ({
   );
 };
 
-export default Switch;
+export default Checkbox;
