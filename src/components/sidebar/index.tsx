@@ -29,7 +29,7 @@ const Sidebar: FC<ISidebar> = ({
       <ul className={styles.sidebar__list}>
         <li className={styles.sidebar__item}>
           <NavLink
-            to={routes.main}
+            to={routes.delivery}
             className={({ isActive }) =>
               `${styles.sidebar__link} ${
                 isActive ? styles.sidebar__link_active : ''

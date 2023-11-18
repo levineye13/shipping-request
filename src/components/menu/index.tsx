@@ -14,7 +14,7 @@ const Menu: FC<IMenu> = ({ className }): ReactElement => {
       <ul className={styles.menu__list}>
         <li className={styles.menu__item}>
           <NavLink
-            to={routes.main}
+            to={routes.delivery}
             className={({ isActive }) =>
               `${styles.menu__link} ${isActive ? styles.menu__link_active : ''}`
             }
