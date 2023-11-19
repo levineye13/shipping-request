@@ -5,13 +5,13 @@ import styles from './index.module.scss';
 interface IForm {
   readonly children: ReactElement | ReactElement[];
   readonly name: string;
-  readonly onSubmit: () => void;
+  readonly onSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
 const Form: FC<IForm> = ({ children, name, onSubmit }): ReactElement => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    onSubmit();
+    onSubmit(e);
   };
 
   return (
