@@ -16,6 +16,7 @@
   align-items: stretch;
   transition: width $animation-duration ease-in-out;
   overflow: hidden;
+  z-index: 6;
 
   &_opened {
     width: 100%;

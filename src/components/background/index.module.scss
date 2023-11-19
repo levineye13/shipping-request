@@ -12,6 +12,7 @@
   cursor: pointer;
   transition: visibility $animation-duration ease-in-out,
     opacity $animation-duration ease-in-out;
+  z-index: 5;
 
   &_active {
     visibility: visible;
