@@ -27,6 +27,7 @@ const Counter: FC<ICounter> = ({
       <div className={styles.counter__custom}>
         <button
           className={`${styles.counter__button} ${styles.counter__button_left}`}
+          type='button'
           onClick={onDecrement}
         >
           -
@@ -36,6 +37,7 @@ const Counter: FC<ICounter> = ({
         </span>
         <button
           className={`${styles.counter__button}  ${styles.counter__button_right}`}
+          type='button'
           onClick={onIncrement}
         >
           +

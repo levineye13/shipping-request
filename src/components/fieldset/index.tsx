@@ -34,6 +34,7 @@ const Fieldset: FC<IFieldset> = ({
         className={`${styles.fieldset__delete} ${
           withDelete ? styles.fieldset__delete_active : ''
         }`}
+        type='button'
         onClick={handleDelete}
       >
         <img
